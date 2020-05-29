@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<h1>Welcome to DraftTrack</h1>
+
+<p><%= image_tag "Fantasy-football-image1.png"%></p>
+
+<%= form_tag do%>
+    <p>Enter Player Name: <%= text_field_tag(:draftInput) %> </p>
+    <p> <%= submit_tag "Enter Pick"%> </p>
+<% end %>
+
+
+<table>
+    <thead> <b>Available Players</b> 
+    <br>
+        <tr>
+            <th> Position </th>
+            <th> Player </th>
+            <th> Rating </th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @available.each do |pick| %>
+            <tr>
+                <td> <%= pick[0] %> </td>
+                <td> <%= pick[1] %> </td>
+                <td> <%= pick[2] %> </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+
+
+<table>
+    <thead> <b>New England Patriots</b> 
+    <br>
+        <tr>
+            <th> Position </th>
+            <th> Player </th>
+            <th> Rating </th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @patriots.each do |pick| %>
+            <tr>
+                <td> <%= pick.position %> </td>
+                <td> <%= pick.player %> </td>
+                <td> <%= pick.rating %> </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<br>
+<br>
+
+<table>
+    <thead> <b>Atlanta Falcons</b> 
+    <br>
+        <tr>
+            <th> Position </th>
+            <th> Player </th>
+            <th> Rating </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @falcons.each do |pick| %>
+            <tr>
+                <td> <%= pick.position %> </td>
+                <td> <%= pick.player %> </td>
+                <td> <%= pick.rating %> </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<br>
+<br>
+
+<table>
+    <thead> <b>Los Angeles Rams</b> 
+    <br>
+        <tr>
+            <th> Position </th>
+            <th> Player </th>
+            <th> Rating </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @rams.each do |pick| %>
+            <tr>
+                <td> <%= pick.position %> </td>
+                <td> <%= pick.player %> </td>
+                <td> <%= pick.rating %> </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

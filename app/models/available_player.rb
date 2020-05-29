@@ -1,0 +1,2 @@
+class AvailablePlayer < ApplicationRecord
+end

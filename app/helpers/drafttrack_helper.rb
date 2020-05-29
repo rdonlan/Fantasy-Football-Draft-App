@@ -1,0 +1,2 @@
+module DrafttrackHelper
+end

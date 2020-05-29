@@ -1,0 +1,6 @@
+SS	Troy Polomalu	89
+QB	Tom Brady	99
+TE	Rob Gronkowski	69
+QB	Kyler Murray	75
+QB	Brett Hundley	64
+HB	Kenyan Drake	81

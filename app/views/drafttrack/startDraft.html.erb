@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<h1>Welcome to DraftTrack</h1>
+
+<p><%= image_tag "DraftTrack.png"%></p>
+
+<%= form_tag do%>
+    <p>Enter Player Name: <%= text_field_tag(:draftInput) %> </p>
+    <p> <%= submit_tag "Enter Pick"%> Hit this button or the ENTER key to draft a player</p>
+<% end %>
+
+<%= form_tag ({ :controller => 'drafttrack', :action => 'destroy_all' }) do%>
+    <%= submit_tag 'Reset Draft'%>
+<% end %>
+
+<br>
+<b>Only Available Players May be Drafted. If illegal draft occurs, the current team must redraft an Available Player<b>
+<br><br><br>
+<b>Team up to Draft:<b>
+
+<% if (AvailablePlayer.count==0)%>
+    <p>Draft is Completed!!!<p>
+
+<% else %>
+    <% if (AvailablePlayer.count%3==0)%>
+        <p>New England Patriots<p>
+    <% end %>
+    <% if (AvailablePlayer.count%3==2)%>
+        <p>Los Angeles Rams<p>
+    <% end %>
+    <% if (AvailablePlayer.count%3==1)%>
+        <p>Atlanta Falcons<p>
+    <% end %>
+<% end %>
+
+
+
+ <br>
+
+<table>
+    <thead> <b>Available Players</b> 
+    <br>
+        <tr>
+            <th> Position </th>
+            <th> Player </th>
+            <th> Rating </th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @availablePlayers.each do |pick| %>
+            <tr>
+                <td> <%= pick.position %> </td>
+                <td> <%= pick.player %> </td>
+                <td> <%= pick.rating %> </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<br>
+<br>
+
+<table>
+    <thead> <b>New England Patriots</b> 
+    <br>
+        <tr>
+            <th> Position </th>
+            <th> Player </th>
+            <th> Rating </th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @patriots.each do |pick| %>
+            <tr>
+                <td> <%= pick.position %> </td>
+                <td> <%= pick.player %> </td>
+                <td> <%= pick.rating %> </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<br>
+<br>
+
+<table>
+    <thead> <b>Los Angeles Rams</b> 
+    <br>
+        <tr>
+            <th> Position </th>
+            <th> Player </th>
+            <th> Rating </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @rams.each do |pick| %>
+            <tr>
+                <td> <%= pick.position %> </td>
+                <td> <%= pick.player %> </td>
+                <td> <%= pick.rating %> </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+
+<br>
+<br>
+
+<table>
+    <thead> <b>Atlanta Falcons</b> 
+    <br>
+        <tr>
+            <th> Position </th>
+            <th> Player </th>
+            <th> Rating </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @falcons.each do |pick| %>
+            <tr>
+                <td> <%= pick.position %> </td>
+                <td> <%= pick.player %> </td>
+                <td> <%= pick.rating %> </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
